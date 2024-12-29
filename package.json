@@ -5,7 +5,7 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "start": "tsx main.ts",
+    "start": "tsx watch main.ts",
     "deploy": "tsx utils/deploy-commands.ts"
   },
   "author": "Maria Tudose",
