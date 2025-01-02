@@ -4,6 +4,7 @@ import { waterReminderMessages, exerciseReminderMessages } from "../messages";
 import { readReminderFile } from "../utils/readReminderFile";
 import { createReminderInterval } from "../utils/createReminderInterval";
 import { EventHandler } from "../types";
+import { clearPastMessages } from "../utils/clearPastMessages";
 
 type Intervals = {
   waterInterval: NodeJS.Timeout | null;
@@ -11,7 +12,6 @@ type Intervals = {
 };
 
 const userIntervals = new Map<string, Intervals>();
-const offlineStates = ["offline", "idle"];
 const reminderData: Reminder[] = readReminderFile();
 
 const clearIntervals = (userId: string) => {
@@ -29,9 +29,12 @@ const execute = (oldMember: Presence | null, newMember: Presence) => {
   const { userId, user, status: newStatus } = newMember;
   if (!user) return;
 
+  const date = new Date().toLocaleString("en-GB");
+  console.log(`${date} - ${user.displayName} went ${newStatus}`);
+
   const userReminders = reminderData.filter((reminder) => reminder.userId === userId);
 
-  if (userReminders.length > 0 && offlineStates.includes(oldStatus) && newStatus === "online") {
+  if (userReminders.length > 0 && oldStatus === "offline" && newStatus === "online") {
     console.log("userReminders", userReminders);
 
     clearIntervals(userId);
@@ -44,8 +47,9 @@ const execute = (oldMember: Presence | null, newMember: Presence) => {
     if (water) intervals.waterInterval = createReminderInterval(user, water, waterReminderMessages);
 
     userIntervals.set(userId, intervals);
-  } else if (userReminders.length > 0 && offlineStates.includes(newStatus)) {
+  } else if (userReminders.length > 0 && newStatus === "offline") {
     clearIntervals(userId);
+    clearPastMessages(user);
   }
 };
 
