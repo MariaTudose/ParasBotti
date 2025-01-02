@@ -1,8 +1,10 @@
-import { Events, ChatInputCommandInteraction } from "discord.js";
+import { Events, ChatInputCommandInteraction, CacheType, Interaction, ClientEvents } from "discord.js";
 import { commands } from "../commands";
-import { client } from "../main";
+import { EventHandler } from "../types";
 
-client.on(Events.InteractionCreate, async (interaction) => {
+const name = Events.InteractionCreate;
+
+const execute = (interaction: Interaction<CacheType>) => {
   if (!interaction.isCommand()) {
     return;
   }
@@ -10,4 +12,6 @@ client.on(Events.InteractionCreate, async (interaction) => {
   if (interaction instanceof ChatInputCommandInteraction && commands[commandName as keyof typeof commands]) {
     commands[commandName as keyof typeof commands].execute(interaction);
   }
-});
+};
+
+export default { name, execute } as EventHandler<Events.InteractionCreate>;

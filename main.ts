@@ -1,11 +1,19 @@
 import { token } from "./config.json";
 import { Client, Events, GatewayIntentBits } from "discord.js";
-import { commands } from "./commands";
+import { events } from "./events";
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
-
-client.once(Events.ClientReady, (readyClient: any) => {
-  console.log(`Ready! Logged in as ${readyClient.user.tag}`);
+export const client = new Client({
+  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildPresences],
 });
 
 client.login(token);
+
+client.once(Events.ClientReady, (readyClient) => {
+  console.log(`Ready! Logged in as ${readyClient.user.tag}`);
+});
+
+for (const event of events) {
+  client.on(event.name, (...args: any) => {
+    event.execute(...args);
+  });
+}
