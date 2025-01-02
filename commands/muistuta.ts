@@ -18,11 +18,16 @@ export const data = new SlashCommandBuilder()
     option.setName("interval").setDescription("Monen tunnin välein? (desimaalit ok)").setRequired(true)
   );
 
+export type Reminder = {
+  userId: string;
+  type: number;
+  interval: number;
+};
+
 export const execute = async (interaction: ChatInputCommandInteraction) => {
   const type = interaction.options.getNumber("tyyppi") ?? 0;
   const interval = interaction.options.getNumber("interval") ?? 1;
   const user = interaction.user;
-  const userName = user.toString();
 
   await interaction.reply({
     content: `Saat jatkossa muistutuksen ${type === 0 ? "jumpata" : "juoda vettä"} ${interval} tunnin välein`,
@@ -34,16 +39,20 @@ export const execute = async (interaction: ChatInputCommandInteraction) => {
       console.error(err);
       return;
     }
-
-    const parsedData = JSON.parse(data);
-    parsedData.push({ userId: user.id, type, interval });
+    const reminderItem = { userId: user.id, type, interval };
+    const parsedData = JSON.parse(data) as Reminder[];
+    const existing = parsedData.find((item) => item.userId === user.id && item.type === type);
+    if (existing) {
+      parsedData[parsedData.indexOf(existing)] = reminderItem;
+    } else parsedData.push(reminderItem);
 
     fs.writeFile("./data/reminders.json", JSON.stringify(parsedData), (err) => {
+      const typeString = type === 0 ? "exercise" : "drinking water";
       if (err) {
         console.error(err);
         return;
       } else {
-        console.log(`${userName} will get reminders`);
+        console.log(`${user.globalName} will get reminders for ${typeString} every ${interval} hours`);
       }
     });
   });
