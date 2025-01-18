@@ -11,6 +11,7 @@
   "author": "Maria Tudose",
   "license": "ISC",
   "dependencies": {
+    "cron": "^3.3.2",
     "discord": "^0.8.2",
     "discord.js": "^14.16.3"
   },
