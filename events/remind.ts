@@ -1,7 +1,7 @@
 import { Events, Presence } from "discord.js";
 import { Reminder } from "../commands/muistuta";
 import { waterReminderMessages, exerciseReminderMessages } from "../messages";
-import { readReminderFile } from "../utils/readReminderFile";
+import { readLocalFile } from "../utils/readLocalFile";
 import { createReminderInterval } from "../utils/createReminderInterval";
 import { EventHandler } from "../types";
 import { clearPastMessages } from "../utils/clearPastMessages";
@@ -11,8 +11,9 @@ type Intervals = {
   exerciseInterval: NodeJS.Timeout | null;
 };
 
+const offlineStatus = ["offline", "idle"];
 const userIntervals = new Map<string, Intervals>();
-const reminderData: Reminder[] = readReminderFile();
+const reminderData: Reminder[] = readLocalFile("./data/reminders.json");
 
 const clearIntervals = (userId: string) => {
   if (userIntervals.has(userId)) {
@@ -34,7 +35,7 @@ const execute = (oldMember: Presence | null, newMember: Presence) => {
 
   const userReminders = reminderData.filter((reminder) => reminder.userId === userId);
 
-  if (userReminders.length > 0 && oldStatus === "offline" && newStatus === "online") {
+  if (userReminders.length > 0 && offlineStatus.includes(oldStatus) && newStatus === "online") {
     console.log("userReminders", userReminders);
 
     clearIntervals(userId);
@@ -47,9 +48,8 @@ const execute = (oldMember: Presence | null, newMember: Presence) => {
     if (water) intervals.waterInterval = createReminderInterval(user, water, waterReminderMessages);
 
     userIntervals.set(userId, intervals);
-  } else if (userReminders.length > 0 && newStatus === "offline") {
+  } else if (userReminders.length > 0 && offlineStatus.includes(newStatus)) {
     clearIntervals(userId);
-    clearPastMessages(user);
   }
 };
 
