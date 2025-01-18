@@ -1,5 +1,4 @@
 import { CronJob } from "cron";
-import { token } from "./config.json";
 import { Client, Events, GatewayIntentBits, TextChannel } from "discord.js";
 import { events } from "./events";
 import remind from "./events/remind";
@@ -15,7 +14,7 @@ export const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildPresences, GatewayIntentBits.GuildMembers],
 });
 
-client.login(token);
+client.login(process.env.TOKEN);
 
 client.once(Events.ClientReady, (readyClient) => {
   console.log(`Ready! Logged in as ${readyClient.user.tag}`);
