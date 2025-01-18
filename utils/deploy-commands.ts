@@ -1,16 +1,17 @@
 import { REST, Routes } from "discord.js";
-import { clientId, guildId, token } from "../config.json";
 import { commands } from "../commands";
+import dotenv from "dotenv";
+dotenv.config();
 
 const commandsData = Object.values(commands).map((command) => command.data);
 
-const rest = new REST({ version: "10" }).setToken(token);
+const rest = new REST({ version: "10" }).setToken(process.env.TOKEN || "");
 
 export const deployCommands = async () => {
   try {
     console.log("Started refreshing application (/) commands.");
     console.log("commandsData", commandsData);
-    await rest.put(Routes.applicationGuildCommands(clientId, guildId), {
+    await rest.put(Routes.applicationGuildCommands(process.env.CLIENT_ID || "", process.env.GUILD_ID || ""), {
       body: commandsData,
     });
 
