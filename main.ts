@@ -2,6 +2,7 @@ import { CronJob } from "cron";
 import { Client, Events, GatewayIntentBits, TextChannel } from "discord.js";
 import { events } from "./events";
 import remind from "./events/remind";
+import { readLocalFile } from "./utils/readLocalFile";
 import { themeMessages } from "./messages";
 import dotenv from "dotenv";
 dotenv.config();
@@ -9,6 +10,12 @@ dotenv.config();
 const guildId = "1216943520145866783";
 const generalId = "1216944969051410525";
 const weekDays = [0, 1, 2, 3, 4, 5, 6];
+
+type Timeout = {
+  userId: string;
+  time: string;
+  duration: number;
+};
 
 export const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildPresences, GatewayIntentBits.GuildMembers],
@@ -28,6 +35,19 @@ client.once(Events.ClientReady, (readyClient) => {
     });
   });
 
+  // Set up sleep timeouts on startup
+  const timeoutData: Timeout[] = readLocalFile("./data/sleepTimes.json");
+  timeoutData.forEach((timeout) => {
+    const [hours, minutes] = timeout.time.split(":");
+    new CronJob(`0 ${minutes} ${hours} * * *`, () => {
+      readyClient.guilds.fetch(process.env.GUILD_ID || "").then(async (guild) => {
+        const memberInstance = await guild.members.fetch(timeout.userId);
+        memberInstance.timeout(timeout.duration * 60 * 60 * 1000);
+      });
+    }).start();
+  });
+
+  // Send theme messages
   weekDays.forEach((weekDay) => {
     new CronJob(`0 0 8 * * ${weekDay}`, () => {
       const channel = readyClient.channels.cache.get(generalId) as TextChannel;

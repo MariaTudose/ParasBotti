@@ -1,5 +1,4 @@
 import fs from "node:fs";
-import { Reminder } from "../commands/muistuta";
 
 export const readLocalFile = (path: string) => {
   try {
