@@ -45,52 +45,62 @@ export const exerciseReminderMessages = [
 ];
 
 const mondayMessages = [
-  "Hyvää maanantaiaamua! 🌱 Tänään on täydellinen päivä pysähtyä, hengittää syvään ja kokea hetki luonnon rauhaa. Jos ehdit, soita suosikkikappaleesi tai laula mukana – musiikki tuo voimaa alkavaan viikkoon!",
-  "On maadoitus- ja musisointimaanantai! Ota hetki itsellesi: kosketa maata, tunne yhteys ympäristöösi ja anna musiikin täyttää mielesi. Mikä kappale inspiroi sinua tänään? 🎶",
-  "Hyvää maanantaiaamua! 🌿 Astu hetkeksi ulos, hengitä raikasta ilmaa ja tunne maa jalkojesi alla. Jos voit, laita taustalle soimaan kappale, joka saa hymyn huulillesi – pienet asiat tekevät päivästä suuren.",
-  "On maadoitus- ja musisointimaanantai! 🌍🎵 Tänään voit aloittaa viikon rauhallisesti: kokeile vaikka mindfulness-harjoitusta tai luo oma pieni melodia. Mikä hetki tänään tuo sinulle eniten tasapainoa?",
+  "Hyvää maanantaiaamua 🌿 Aloita viikko rauhassa: hengitä syvään, venyttele ja tunne maa jalkojesi alla. Tänään ei tarvitse kiirehtiä minnekään.",
+  "On maadoitusmaanantai 🌾 Palaa hetkeksi kehoosi ja ympäristöösi – huomaa tuoksut, äänet ja pienet yksityiskohdat. Maailma ei ole niin kiireinen, miltä se joskus tuntuu.",
+  "Hyvää musisointimaanantaita! 🎶 Laita soimaan kappale, joka saa olosi hyväksi – tai hyräile itse. Musiikki on paras lääke viikon alkuun.",
+  "On musisointimaanantai! 🎧 Anna rytmin virrata kehoon ja mielen keventyä. Mikä biisi kuvaa tämänhetkistä fiilistäsi?",
+  "Hyvää myyrämaanantaita 🦦 Kaiva itsesi sängystä ylös vitun myyrä.",
 ];
 
 const tuesdayMessages = [
-  "Ihanaa terapiatiistaita! 🛋️ Tänään on hyvä hetki pysähtyä ja kysyä: Miltä minusta oikeasti tuntuu? Anna itsellesi lupa olla avoin tunteidesi kanssa – se on osa kasvua.",
-  "Hyvää huomenta, servulaiset! 🌞 Terapiatiistaina keskitytään mielen hyvinvointiin. Mikä on pieni teko, jolla voit tänään olla armollinen itsellesi tai muille?",
-  "Hyvää huomenta, servulaiset! 🌸 Terapiatiistain kunniaksi muistutamme: sinä riität juuri sellaisena kuin olet. Jos elämä tuntuu kiireiseltä, ota pieni tauko ja kysy itseltäsi: Mitä tarvitsen juuri nyt?",
-  "Terapiatiistai on täällä! 💬 Tänään on hyvä hetki jakaa ajatuksia, kuunnella muita tai kirjoittaa itsellesi rohkaiseva viesti. Miten voisit tänään tehdä elämästä vähän pehmeämpää?",
+  "Ihanaa terapiatiistaita 🌸 Tänään on hyvä hetki tarkistaa oma olo: mitä kaipaan juuri nyt? Pieni myötätunto itseä kohtaan kantaa pitkälle.",
+  "Hyvää huomenta servulaiset 💕 Terapiatiistaina muistetaan, ettei tarvitse jaksaa kaikkea yksin. Ole tänään ystävällinen itsellesi.",
+  "Hyvää tavoitetiistaita! 🗓️ Mieti tänään yksi pieni asia, jonka haluat saada aikaan – ei tarvitse olla iso, kunhan vie eteenpäin.",
+  "Tavoitetiistai on täällä! 💪 Kirjoita ylös tämän päivän tärkein tehtävä ja keskity siihen. Pienetkin tavoitteet luovat suuria muutoksia ajan kanssa.",
+  "Hyvää tavoitetiistaita! Tee edes yksi pieni juttu, niin voit leikkiä, että elämä on hallinnassa.",
 ];
 
 const wednesdayMessages = [
-  "Aurinkoista kiitollisuuskeskiviikkoa! ☀️ Mikä tänään tuo sinulle iloa? Pienetkin asiat, kuten lämmin kahvi tai ystävän hymy, ansaitsevat kiitoksen. Jaettu kiitollisuus kasvaa – kerro meille omasi!",
-  "Hyvää keskiviikkoa! 🪷 Tänään pysähdytään kiittämään. Mieti kolmea asiaa, joista olet kiitollinen juuri nyt. On ihmeellistä, mitä kiitollisuus voi tehdä mielelle!",
-  "Aurinkoista kiitollisuuskeskiviikkoa! ☀️ Mietitään tänään, keille voimme olla kiitollisia. Lähetä viesti jollekin, joka on auttanut sinua tänä vuonna. Pienikin kiitos voi merkitä paljon.",
-  "Hyvää keskiviikkoa! 🌺 Tänään kiitollisuus on päivän teema. Mieti jotain arkista asiaa, jota ilman elämä olisi vaikeampaa – kiitä siitä mielessäsi. Elämä on täynnä pieniä ihmeitä!",
+  "Hyvää kävelykeskiviikkoa! 🚶‍♂️ Lähde pienelle kävelylle, vaikka korttelin ympäri. Liike selkeyttää mieltä ja tuo energiaa päivään.",
+  "On kävelykeskiviikko 👣 Tänään ei tarvitse kiirehtiä – kävele omassa tahdissa ja anna ajatusten virrata vapaasti.",
+  "Aurinkoista kiitollisuuskeskiviikkoa ☀️ Mieti kolmea asiaa, joista olet tänään kiitollinen. Pienetkin hetket ansaitsevat huomion.",
+  "Hyvää keskiviikkoa 🌼 Tänään harjoitellaan kiitollisuutta – sano ääneen tai kirjoita ylös jotain, mikä saa sinut hymyilemään.",
+  "Kakkakeskiviikko muistuttaa, että kaikilla viikoilla on oma ruskea hetkensä. Ota rennosti ja huuhtele huolet pois.",
 ];
 
 const thursdayMessages = [
-  "Toivotustorstain kunniaksi lähetä joku kaunis ajatus tai toivotus jollekin tänään! 💌 Yksi ystävällinen sana voi tehdä jonkun päivästä paremman – ja ehkä myös sinun.",
+  "Toivotustorstain kunniaksi lähetä joku kaunis ajatus tai toivotus jollekin tänään! 💌 Yksi ystävällinen sana voi tehdä jonkun päivästä paremman.",
   "Hyvää torstaita! Tänään toivotetaan hyvää muille. Kirjoita kanavalle toivotus, jonka haluaisit itsekin kuulla. Hyvyys kiertää! 💫",
-  "Hyvää toivotustorstaita! 💌 Mieti, mitä hyvää haluaisit tapahtuvan jollekulle tänään, ja toivota se ääneen tai kirjoita kanavalle. Positiiviset toiveet voivat inspiroida meitä kaikkia!",
-  "On toivotustorstai! 🌟 Toivota tänään rohkeasti jotain hyvää maailmalle tai jollekin läheiselle. Hyvän toivottaminen ei maksa mitään, mutta voi tehdä suuren eron!",
+  "Hyvää tiskitorstaita 🧽 Tänään laitetaan tiskit – ja ajatukset – järjestykseen. Pieni siisteys tuo yllättävän paljon mielenrauhaa!",
+  "On tiskitorstai 🍽️ Laita lempimusiikki soimaan ja tee tiskauksesta meditatiivinen hetki. Kirkas tiskipöytä, kirkas mieli!",
 ];
 
 const fridayMessages = [
-  "Hyvää piirustusperjantaita! ✏️ Ota kynä käteen ja anna mielikuvituksesi lentää. Olipa kyseessä taideteos tai tikku-ukko, kaikki luovuus on arvokasta. Jaa oma luomuksesi, jos haluat!",
-  "On piirustusperjantai! 🎨 Minkä kuvan piirtäisit, jos haluaisit kuvata tätä viikkoa? Anna mielesi inspiroitua ja tee jotain uutta!",
-  "Ihanaa perjantaita! ✍️ Piirustusperjantaina otetaan kynä käteen ja annetaan luovuuden virrata. Piirrä vaikka hymynaama tai pieni kukka – tärkeintä on, että nautit tekemisestä.",
-  "Hyvää piirustusperjantaita! 🎨 Minkä maiseman haluaisit nähdä juuri nyt? Kuvittele se mielessäsi ja kokeile vaikka luonnostella paperille. Luovuus ei tarvitse sääntöjä!",
+  "Hyvää piirustusperjantaita! 🎨 Ota kynä tai tabletti esiin ja piirrä jotain, mikä kuvaa tämän päivän tunnelmaa.",
+  "On piirustusperjantai ✏️ Luovuus ei tarvitse syytä – luonnostele, raapustele tai maalaa mielesi väreillä.",
+  "Hyvää peliperjantaita! 🕹️ Tänään on lupa rentoutua pelaamalla – yksin tai kavereiden kanssa",
+  "On peliperjantai! 🎲 Valitse peli, jossa voit uppoutua hetkeksi ja unohtaa arjen. Hauskuus on osa palautumista!",
+  "Hyvää pizzaperjantaita 🍕 Tänään kaikki näyttää paremmalta, kun uunissa paistuu pizza. Valitse lempitäytteesi ja nauti ilman kiirettä – viikonloppu on täällä!",
+  "On pizzaperjantai! 🧀 Oli se itse tehty, tilattu tai pakasteosastolta, pizza tekee päivästä juhlan. Ota pala rauhaa ja pala juustoa samalla kertaa.",
+  "Hyvää pippeliperjantaita! 🍆",
 ];
 
 const saturdayMessages = [
-  "Ihanaa leivonta- ja lukulauantaita! 🧁📚 Tänään on täydellinen päivä sekä keittiötaiteelle että hyvälle kirjalle. Valmista jotain herkullista ja nauti siitä lempikirjasi parissa!",
-  "Hyvää lauantaiaamua! 🍞📖 Leivonta- ja lukulauantaina voit leipoa herkkuja, jotka maistuvat erityisen hyvältä mukavan lukemisen lomassa. Jaa kuvia tai reseptejä muidenkin iloksi!",
-  "Leivonta- ja lukulauantai on täällä! 🥐📚 Onko mitään parempaa kuin tuoreen leivonnaisen tuoksu ja syventyminen kiehtovaan tarinaan? Jaa meille suositus joko reseptistä tai kirjasta!",
-  "Hyvää lauantaita! 🍪 Onko sinulla resepti, jonka olet aina halunnut kokeilla? Tänään on täydellinen päivä testata sitä. Muista, että tärkeintä on ilo, ei täydellisyys. Kun odottelet herkkujen valmistumista, tartu kiinnostavaan kirjaan ja anna mielikuvituksesi lentää!",
+  "Hyvää leivontalauantaita 🧁 Täytä koti tuoreiden herkkujen tuoksulla – tai käy kahvilassa ja hemmottele itseäsi valmiilla leivonnaisella.",
+  "Leivontalauantai on täällä 🍪 Mikä resepti houkuttelee tänään? Muista: tärkeintä ei ole täydellinen lopputulos, vaan leipomisen ilo.  Jaa kuvia tai reseptejä muidenkin iloksi!",
+  "Hyvää lukulauantaita 📖 Kiedo itsesi vilttiin, kaada kuppi teetä ja uppoudu kirjan maailmaan.",
+  "On lukulauantai! 📚 Tänään on lupa kadota tarinaan – olipa se romaani, sarjakuva tai runo.",
+  "Hyvää leffalauantaita 🎞️ Valitse elokuva, joka saa nauramaan, itkemään tai unelmoimaan.",
+  "On leffalauantai 🍿 Sammuta valot, ota peitto ja nauti elokuvasta ilman kiirettä. Mikä on tämän viikon katselusuositus?",
+  "Hyvää löhöilylauantaita 😌 Tänään ei tarvitse saavuttaa mitään. Anna kehon ja mielen levätä rauhassa.",
+  "On löhöilylauantai 💤 Pysy peiton alla niin kauan kuin haluat – tänään on palautumisen päivä.",
 ];
 
 const sundayMessages = [
-  "Hyvää sunnuntaita! 🧹 Tänään siivotaan ajatuksia ja ympäristöä sekä suunnitellaan tulevaa viikkoa. Mitkä kolme asiaa haluat saavuttaa ensi viikolla? Tee niistä lista!",
-  "Aurinkoista sunnuntaita! 🪣 Siivous- ja suunnittelusunnuntaina tehdään tilaa uudelle: järjestä yksi pieni tila kotona ja pohdi samalla tavoitteitasi tulevalle viikolle. Pienillä askelilla syntyy isoja muutoksia!",
-  "Hyvää sunnuntaiaamua! ✨ Siivous- ja suunnittelupäivänä teemme tilaa sekä kodissa että mielessä. Aloita pienestä: siivoa yksi nurkka ja kirjoita ylös yksi tavoite tulevalle viikolle.",
-  "On siivous- ja suunnittelusunnuntai! 📝 Käytä hetki pohtiaksesi, mikä toisi ensi viikkoon iloa ja selkeyttä. Yksi pieni suunnitelma tänään voi säästää suuria päänvaivoja myöhemmin!",
+  "Hyvää siivoussunnuntaita 🧽 Laita lempimusiikki soimaan ja siivoa yksi pieni kohta – sen jälkeen olo on jo kevyempi.",
+  "On siivoussunnuntai 🧺 Pienikin järjestys kodissa voi tuoda rauhaa mieleen. Aloita vaikka työpöydästä!",
+  "Hyvää suunnittelusunnuntaita 🪶 Tänään voi rauhassa hahmotella tulevan viikon suuntaa. Mikä olisi yksi asia, jota odotat?",
+  "On suunnittelusunnuntai ✍️ Tee pieni suunnitelma ensi viikolle – ei stressiä, vain lempeää selkeyttä. Sinulla on enemmän hallintaa kuin luulet.",
 ];
 
 export const themeMessages = [

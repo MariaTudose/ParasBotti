@@ -47,11 +47,18 @@ client.once(Events.ClientReady, (readyClient) => {
     }).start();
   });
 
-  // Send theme messages
+  // Send theme messages with random skipping
   weekDays.forEach((weekDay) => {
     new CronJob(`0 0 8 * * ${weekDay}`, () => {
+      // Randomly skip some days per week
+      if (Math.random() < 0.3) {
+        return;
+      }
+
       const channel = readyClient.channels.cache.get(generalId) as TextChannel;
-      channel.send(themeMessages[weekDay][Math.floor(Math.random() * 4)]);
+      const dayMsgs = themeMessages[weekDay];
+      const msg = dayMsgs[Math.floor(Math.random() * dayMsgs.length)];
+      channel.send(msg);
     }).start();
   });
 });
